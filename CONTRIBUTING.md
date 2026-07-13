@@ -11,7 +11,7 @@ git clone https://github.com/votre-pseudo/projet-commun.git
 3. Creer une branche
 
 ```
-git branch -C feat/votre-feature
+git switch -c feat/votre-feature
 ```
 
 Il existe plusieurs comme "feat/" (feature), "fix/", "ref/" (refactor).
