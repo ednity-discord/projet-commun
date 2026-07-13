@@ -11,7 +11,10 @@ includes = [
   include_directories('include')
 ]
 
-common_sources = files()
+common_sources = files(
+  'net/socket_posix.c',
+  'net/socket_win32.c'
+)
 
 arguments = [
   '-D_POSIX_C_SOURCE=200809L',

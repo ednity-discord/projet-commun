@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void usage(char *name);
-void die(void);
+void
+usage(char *name);
+void
+die(void);
 
 int
 main(int argc, char *argv[])
