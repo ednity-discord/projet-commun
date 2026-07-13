@@ -1,13 +1,11 @@
 # projet-commun
 
-## Developpement
+## Dependances
 
 Pour pouvoir travailler correctement sur ce projet il vous faudra:
 - meson
 - ninja
 - clang-format
-
-Sous Windows (MinGW):
 
 <details><summary>Sous Window (MSYS2 MinGW)</summary>
 
@@ -31,12 +29,12 @@ sudo pacman -S meson ninja clang
 <details><summary>Sous Ubuntu/Debian</summary>
 
 ```
-sudo apt install meson ninja clang-format
+sudo apt install meson ninja-build clang-format
 ```
 
 </details>
 
-* Compilation
+## Compilation
 
 ```
 meson setup build
@@ -52,5 +50,41 @@ ninja -C build
 
 ## Contribuer
 
-On oublie pas d'utiliser `clang-format` pour formatter le code avant de
-commit.
+1. Fork le depot
+
+2. Cloner votre fork
+
+```
+git clone https://github.com/votre-pseudo/projet-commun.git
+```
+
+3. Creer une branche
+
+```
+git branch -C feat/votre-feature
+```
+
+Il existe plusieurs comme "feat/" (feature), "fix/", "ref/" (refactor).
+
+4. Faire vos changements
+
+5. Formatter vos changements
+
+```
+clang-format fichier-modifie
+```
+
+6. Commit vos changements
+
+```
+git add .
+git commit -m "feat: votre feature"
+```
+
+7. Push vers votre fork
+
+```
+git push origin feat/votre-feature
+```
+
+8. Ouvrir une pull-request
