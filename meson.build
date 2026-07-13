@@ -7,17 +7,11 @@ project(
   ]
 )
 
-dependencies = [
-  dependency('threads')
-]
-
 includes = [
   include_directories('include')
 ]
 
-sources = files(
-  'source/main.c'
-)
+common_sources = files()
 
 arguments = [
   '-D_POSIX_C_SOURCE=200809L',
@@ -33,9 +27,5 @@ if get_option('buildtype') == 'debug'
   add_project_arguments('-DDEBUG', language: 'c')
 endif
 
-executable(
-  meson.project_name(),
-  sources,
-  dependencies: dependencies,
-  include_directories: includes
-)
+subdir('server')
+subdir('client')
