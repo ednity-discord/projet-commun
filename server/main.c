@@ -1,10 +1,40 @@
 #include "error.h"
 #include <stdio.h>
+#include <stdlib.h>
+
+void usage(char *name);
+void die(void);
 
 int
-main(void)
+main(int argc, char *argv[])
 {
-	printf("this is the server\n");
+	int i;
+	char *port = "80";
+	for (i = 1; i < argc; i++) {
+		if (i + 1 == argc) {
+			usage(argv[0]);
+			die();
+		} else if (!strcmp(argv[i], "-p")) {
+			i++;
+			port = argv[i];
+		} else {
+			usage(argv[0]);
+			die();
+		}
+	}
+	printf("server listening on port %s\n", port);
 	ERROR("this is an error\n");
 	return 0;
+}
+
+void
+usage(char *name)
+{
+	printf("usage: %s [-p port]\n", name);
+}
+
+void
+die(void)
+{
+	exit(1);
 }
